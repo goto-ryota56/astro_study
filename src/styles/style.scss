@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// 共通
+@use "./common/mixin" as *;
+@use "./common/variable" as *;
+@use "./common/reset" as *;
+@use "./common/common" as *;
+
+// 各ページ
+@use "./about/layout" as *;
+

@@ -1,0 +1,346 @@
+@use "./variable" as *;
+/* ==========================================================================
+  Document
+  ========================================================================== */
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  background-color: $backgroundColor_base;
+  color: $fontColor_base;
+  font-family: $fontFamily_sansSerif;
+  line-height: $lineHeight_default;
+  min-height: 100%;
+  overflow-wrap: break-word;
+  padding: 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+  Section & Heading
+  ========================================================================== */
+
+main {
+  display: block;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* ==========================================================================
+  Text
+  ========================================================================== */
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+i,
+cite,
+em,
+address,
+dfn {
+  [lang="ja"] & {
+    font-style: normal;
+  }
+}
+
+small {
+  font-size: 1em;
+}
+
+code,
+kbd,
+samp {
+  font-family: $fontFamily_monospace;
+  font-size: rem(16);
+}
+
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ==========================================================================
+  Link
+  ========================================================================== */
+
+a {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+  Grouping
+  ========================================================================== */
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: $fontFamily_monospace;
+  font-size: rem(16);
+}
+
+/* ==========================================================================
+  Replaced element
+  ========================================================================== */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+iframe {
+  border-style: none;
+}
+
+/* ==========================================================================
+  Form
+  ========================================================================== */
+
+.input,
+.button,
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="submit"],
+[type="reset"],
+[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+input[type="text"] {
+  line-height: normal;
+}
+
+[type="text"]::-ms-clear {
+  visibility: hidden;
+}
+
+[type="password"]::-ms-reveal {
+  visibility: hidden;
+}
+
+[type="number"]::-webkit-outer-spin-button,
+[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+textarea {
+  overflow: auto;
+}
+
+fieldset {
+  border: 0;
+  min-width: auto;
+  padding: 0;
+}
+
+legend {
+  color: inherit;
+  display: block;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+/* ==========================================================================
+  Accessibility
+  ========================================================================== */
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: 1ms !important;
+    scroll-behavior: auto !important;
+    transition: 1ms !important;
+  }
+}
+
+/* ==========================================================================
+  Other
+  ========================================================================== */
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
