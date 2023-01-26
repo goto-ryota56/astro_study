@@ -1,0 +1,24 @@
+---
+import "../styles/style.scss";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const { title, description, type } = Astro.props;
+const ogp_img_src = "../../public/favicon.svg";
+---
+
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width,initial-scale=1' />
+<meta name='format-detection' content='email=no,telephone=no,address=no' />
+
+<title>{title} | {SITE_TITLE}</title>
+<meta name='description' content={description} />
+<meta property='og:title' content={`${title}｜${SITE_TITLE}`} />
+<meta property='og:type' content={type} />
+<meta property='og:description' content={description} />
+<meta property='og:site_name' content={SITE_TITLE} />
+
+<!-- Open Graph / Facebook -->
+<meta property='og:type' content='website' />
+<meta property='og:url' content={ogp_img_src} />
+<meta property='og:title' content={title} />
+

@@ -1,0 +1,30 @@
+---
+const gnav = ["TOP", "About", "Service"];
+---
+
+<header>
+  <div class='l_box'></div>
+  <nav class='r_box'>
+    <ul>
+      {
+        gnav.map((gnav) => (
+          <li>
+            <a href=''>{gnav}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style lang='scss'>
+  @use "../styles/common/_mixin.scss" as *;
+  @include break() {
+    .r_box {
+      a {
+        color: red;
+      }
+    }
+  }
+</style>
+
