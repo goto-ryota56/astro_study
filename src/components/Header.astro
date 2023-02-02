@@ -1,41 +1,43 @@
 ---
-import { site_title } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
-import Ga2 from "../components/Ga2.astro";
+import { site_title } from '../consts'
+import HeaderLink from './HeaderLink.astro'
+import Ga2 from '../components/Ga2.astro'
 
 const obj = [
   {
-    title: "home",
-    href: "/",
+    title: 'home',
+    href: '/'
   },
   {
-    title: "about",
-    href: "/about/",
-  },
-];
+    title: 'about',
+    href: '/about/'
+  }
+]
 ---
 
 <Ga2 />
 <header>
   <div>
-    <a href='/'>{site_title}</a>
+    <a href="/">{site_title}</a>
   </div>
   <nav>
     <ul>
-      <HeaderLink href='/'>Home</HeaderLink>
-      <HeaderLink href='/about'>About</HeaderLink>
-      <HeaderLink href='/blog'>Blog</HeaderLink>
-      <HeaderLink href='https://github.com/joetsu-goto' target='_blank'>GitHub</HeaderLink>
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="https://github.com/joetsu-goto" target="_blank">
+        GitHub
+      </HeaderLink>
     </ul>
   </nav>
 </header>
 
-<style lang='scss'>
-  @use "../styles/common/mixin" as *;
+<style lang="scss">
   header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
     width: 100%;
     height: 60px;
     background: #fff;
@@ -64,4 +66,3 @@ const obj = [
     }
   }
 </style>
-

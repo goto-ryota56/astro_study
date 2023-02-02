@@ -1,8 +1,7 @@
 ---
-const { href, class: className, ...props } = Astro.props;
-
-const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+const { href, class: className, ...props } = Astro.props
+const { pathname } = Astro.url
+const isActive = href === pathname || href === pathname.replace(/\/$/, '')
 ---
 
 <li>
@@ -11,8 +10,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   </a>
 </li>
 
-<style lang='scss'>
-  @use "../styles/common/mixin" as *;
+<style lang="scss">
   li {
     a {
       font-size: 14px;
@@ -22,4 +20,3 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
     }
   }
 </style>
-

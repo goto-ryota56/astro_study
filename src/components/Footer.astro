@@ -1,32 +1,33 @@
 ---
-import { site_title } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
-const year = new Date().getFullYear();
+import { site_title } from '../consts'
+import HeaderLink from './HeaderLink.astro'
+const year = new Date().getFullYear()
 ---
 
 <footer>
-  <div class='link_area'>
-    <div class='inner'>
-      <div class='l_box'>
-        <a href='/'>{site_title}</a>
+  <div class="link_area">
+    <div class="inner">
+      <div class="l_box">
+        <a href="/">{site_title}</a>
       </div>
-      <div class='r_box'>
+      <div class="r_box">
         <nav>
           <ul>
-            <HeaderLink href='/'>Home</HeaderLink>
-            <HeaderLink href='/about'>About</HeaderLink>
-            <HeaderLink href='/blog'>Blog</HeaderLink>
-            <HeaderLink href='https://github.com/joetsu-goto' target='_blank'>GitHub</HeaderLink>
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+            <HeaderLink href="https://github.com/joetsu-goto" target="_blank">
+              GitHub
+            </HeaderLink>
           </ul>
         </nav>
       </div>
     </div>
   </div>
-  <div class='copy_area'><small>&copy; {year} {site_title}</small></div>
+  <div class="copy_area"><small>&copy; {year} {site_title}</small></div>
 </footer>
 
-<style lang='scss'>
-  @use "../styles/common/mixin" as *;
+<style lang="scss">
   footer {
     background: #333;
     .inner {
@@ -51,4 +52,3 @@ const year = new Date().getFullYear();
     }
   }
 </style>
-

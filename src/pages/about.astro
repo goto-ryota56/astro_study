@@ -1,21 +1,19 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
-const page_title = "Aboutページです。";
-const description = "AstroというJSフレームワークの勉強しています。";
-const type = "artcle";
+const page_title = 'Aboutページです。'
+const description = 'AstroというJSフレームワークの勉強しています。'
+const type = 'article'
 ---
 
-<html lang='ja'>
-  <head>
-    <BaseHead title={page_title} description={description} type={type} />
-  </head>
+<html lang="ja">
+  <BaseHead title={page_title} description={description} type={type} />
   <body>
     <Header />
     <main>
-      <section class='ttl_area'>
+      <section class="ttl_area">
         <h1>{page_title}</h1>
         <p>ここはaboutページになります。</p>
       </section>
@@ -23,4 +21,3 @@ const type = "artcle";
     <Footer />
   </body>
 </html>
-

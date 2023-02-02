@@ -1,4 +1,4 @@
-@use "./variable" as *;
+@use './variable' as *;
 /* ==========================================================================
   Document
   ========================================================================== */
@@ -69,7 +69,7 @@ cite,
 em,
 address,
 dfn {
-  [lang="ja"] & {
+  [lang='ja'] & {
     font-style: normal;
   }
 }
@@ -214,51 +214,51 @@ select {
 }
 
 button,
-[type="submit"],
-[type="reset"],
-[type="button"] {
+[type='submit'],
+[type='reset'],
+[type='button'] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-input[type="text"] {
+input[type='text'] {
   line-height: normal;
 }
 
-[type="text"]::-ms-clear {
+[type='text']::-ms-clear {
   visibility: hidden;
 }
 
-[type="password"]::-ms-reveal {
+[type='password']::-ms-reveal {
   visibility: hidden;
 }
 
-[type="number"]::-webkit-outer-spin-button,
-[type="number"]::-webkit-inner-spin-button {
+[type='number']::-webkit-outer-spin-button,
+[type='number']::-webkit-inner-spin-button {
   appearance: none;
 }
 
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -292,15 +292,15 @@ progress {
   Accessibility
   ========================================================================== */
 
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
   outline: none !important;
 }
 
-[aria-busy="true"] {
+[aria-busy='true'] {
   cursor: progress;
 }
 
-[aria-disabled="true"],
+[aria-disabled='true'],
 [disabled] {
   cursor: not-allowed;
 }
@@ -343,4 +343,3 @@ template {
 [hidden] {
   display: none;
 }
-
