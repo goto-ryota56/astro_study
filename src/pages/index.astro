@@ -1,11 +1,11 @@
 ---
-import "../styles/style.scss";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-const page_title = "成長をともに",
-  description = "ようこそTOPページへ",
-  type = "website";
+import Footer from "../components/Footer.astro";
+
+const page_title = "Astro勉強中";
+const description = "AstroというJSフレームワークの勉強しています。";
+const type = "website";
 ---
 
 <html lang='ja'>
@@ -19,7 +19,14 @@ const page_title = "成長をともに",
         <h1>{page_title}</h1>
         <p></p>
       </section>
+      <section class='form_area'></section>
     </main>
+    <Footer />
+    <style>
+      main {
+        padding-top: 60px;
+      }
+    </style>
   </body>
 </html>
 

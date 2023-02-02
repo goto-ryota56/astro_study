@@ -1,0 +1,54 @@
+---
+import { site_title } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class='link_area'>
+    <div class='inner'>
+      <div class='l_box'>
+        <a href='/'>{site_title}</a>
+      </div>
+      <div class='r_box'>
+        <nav>
+          <ul>
+            <HeaderLink href='/'>Home</HeaderLink>
+            <HeaderLink href='/about'>About</HeaderLink>
+            <HeaderLink href='/blog'>Blog</HeaderLink>
+            <HeaderLink href='https://github.com/joetsu-goto' target='_blank'>GitHub</HeaderLink>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class='copy_area'><small>&copy; {year} {site_title}</small></div>
+</footer>
+
+<style lang='scss'>
+  @use "../styles/common/mixin" as *;
+  footer {
+    background: #333;
+    .inner {
+      width: 90%;
+      height: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .l_box {
+        a {
+          color: #fafafa;
+          font-size: 32px;
+        }
+      }
+      .r_box {
+        a {
+          color: #fafafa;
+        }
+      }
+    }
+  }
+</style>
+

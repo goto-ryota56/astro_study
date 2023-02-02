@@ -1,28 +1,65 @@
 ---
-const gnav = ["TOP", "About", "Service"];
+import { site_title } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+import Ga2 from "../components/Ga2.astro";
+
+const obj = [
+  {
+    title: "home",
+    href: "/",
+  },
+  {
+    title: "about",
+    href: "/about/",
+  },
+];
 ---
 
+<Ga2 />
 <header>
-  <div class='l_box'></div>
-  <nav class='r_box'>
+  <div>
+    <a href='/'>{site_title}</a>
+  </div>
+  <nav>
     <ul>
-      {
-        gnav.map((gnav) => (
-          <li>
-            <a href=''>{gnav}</a>
-          </li>
-        ))
-      }
+      <HeaderLink href='/'>Home</HeaderLink>
+      <HeaderLink href='/about'>About</HeaderLink>
+      <HeaderLink href='/blog'>Blog</HeaderLink>
+      <HeaderLink href='https://github.com/joetsu-goto' target='_blank'>GitHub</HeaderLink>
     </ul>
   </nav>
 </header>
 
 <style lang='scss'>
-  @use "../styles/common/_mixin.scss" as *;
-  @include break() {
-    .r_box {
+  @use "../styles/common/mixin" as *;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    div {
+      width: auto;
+      height: 100%;
+      display: grid;
+      place-items: center;
       a {
-        color: red;
+        font-size: 24px;
+      }
+    }
+
+    nav {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0 20px;
       }
     }
   }

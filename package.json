@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.13.0",
+    "@fontsource/noto-sans-jp": "^4.5.12",
     "astro": "^2.0.1"
   },
   "devDependencies": {

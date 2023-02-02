@@ -1,24 +1,29 @@
 ---
-import "../styles/style.scss";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Ga1 from "./Ga1.astro";
+import { site_title } from "../consts";
 
-const { title, description, type } = Astro.props;
-const ogp_img_src = "../../public/favicon.svg";
+const { title, description, type, image = "/common/img/ogp.jpg" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const resetStyle = "https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css";
 ---
 
+<Ga1 />
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
 <meta name='format-detection' content='email=no,telephone=no,address=no' />
 
-<title>{title} | {SITE_TITLE}</title>
+<title>{title} | {site_title}</title>
 <meta name='description' content={description} />
-<meta property='og:title' content={`${title}｜${SITE_TITLE}`} />
-<meta property='og:type' content={type} />
+<meta property='og:title' content={`${title}｜${site_title}`} />
 <meta property='og:description' content={description} />
-<meta property='og:site_name' content={SITE_TITLE} />
+<meta property='og:type' content={type} />
+<meta property='og:url' content={new URL(image, Astro.url)} />
+<meta property='og:site_name' content={site_title} />
 
-<!-- Open Graph / Facebook -->
-<meta property='og:type' content='website' />
-<meta property='og:url' content={ogp_img_src} />
-<meta property='og:title' content={title} />
+<link rel='canonical' href={canonicalURL} />
+<link rel='icon' href='/favicon.svg' />
+
+<link rel='stylesheet' href={resetStyle} />
 

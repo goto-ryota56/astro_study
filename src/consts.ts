@@ -1,3 +1,3 @@
-export const SITE_TITLE = "Goto website.";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+// global const
+export const site_title = "Astro Study";
 
