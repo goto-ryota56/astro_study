@@ -1,6 +1,7 @@
 ---
 import Ga1 from './Ga1.astro'
 import { site_title } from '../consts'
+import '../styles/common.scss'
 
 const { title, description, type, image = '/common/img/ogp.jpg' } = Astro.props
 
@@ -29,6 +30,4 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <link rel="canonical" href={canonicalURL} />
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
-
-  <link rel="stylesheet" href="/src/styles/common.scss" />
 </head>
