@@ -1,0 +1,94 @@
+---
+import { site_title } from '../../consts'
+---
+
+<section class="mv">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="https://source.unsplash.com/random/1920x1080/?spring"
+          alt=""
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://source.unsplash.com/random/1920x1080/?summer"
+          alt=""
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://source.unsplash.com/random/1920x1080/?autumn"
+          alt=""
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://source.unsplash.com/random/1920x1080/?winter"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <div class="top_ttl_box">
+    <h1>{site_title}</h1>
+    <p>このサイトはAstroというJavascriptのフレームワークで作られています。</p>
+  </div>
+</section>
+
+<style lang="scss">
+  section.mv {
+    width: 100vw;
+    height: calc(100dvh - 60px);
+    position: relative;
+    overflow: hidden;
+  }
+  .swiper-container {
+    .swiper-wrapper {
+    }
+    .swiper-slide {
+      img {
+        width: 100vw;
+        height: 100vh;
+
+        object-fit: cover;
+      }
+    }
+  }
+  .top_ttl_box {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 2;
+    transform: translateY(-50%);
+    h1 {
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.75);
+      font-size: 72px;
+    }
+    p {
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.75);
+      font-size: 24px;
+    }
+  }
+</style>
+<script>
+  // スライド設定
+  import Swiper, { Autoplay } from 'swiper'
+  Swiper.use([Autoplay])
+
+  import 'swiper/swiper-bundle.css'
+
+  const mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    speed: 1000
+  })
+</script>

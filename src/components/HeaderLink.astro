@@ -5,17 +5,20 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '')
 ---
 
 <li>
-  <a href={href} class:list={[className, { active: isActive }]} {...props}>
+  <a href={href} class:list={[className, { isActive: isActive }]} {...props}>
     <slot />
   </a>
 </li>
 
 <style lang="scss">
+  @use '../styles/variable' as *;
+  @use '../styles/mixin' as *;
   li {
     a {
-      font-size: 14px;
-      &.active {
-        color: red;
+      font-size: 16px;
+      &.isActive {
+        color: $color_main;
+        font-weight: bold;
       }
     }
   }

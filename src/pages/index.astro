@@ -2,7 +2,8 @@
 // インポート
 import BaseHead from '../components/BaseHead.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
-import TopMv from '../components/TopMv.astro'
+import TopMv from '../components/top/TopMv.astro'
+import TopNews from '../components/top/TopNews.astro'
 
 // ページ設定
 const page_title = 'Astro勉強中'
@@ -13,38 +14,13 @@ const type = 'website'
 <html lang="ja">
   <BaseHead title={page_title} description={description} type={type} />
   <BaseLayout>
-    <section class="mv">
-      <TopMv />
-    </section>
-    <section class="news">
-      <h2>ニュース一覧</h2>
-      <ul>
-        <li>
-          <a href="/"
-            >ニューステキストニューステキストニューステキストニューステキストニューステキスト</a
-          >
-        </li>
-        <li>
-          <a href="/">ニューステキストニューステキストニューステキスト</a>
-        </li>
-        <li>
-          <a href="/"
-            >ニューステキストニューステキストニューステキストニューステキストニューステキストニューステキストニューステキストニューステキストニューステキストニューステキスト</a
-          >
-        </li>
-      </ul>
-    </section>
+    <TopMv />
+    <TopNews />
     <section class="about">
       <h2>企業概要</h2>
     </section>
   </BaseLayout>
-  <style lang="scss">
-    section.mv {
-      width: 100vw;
-      height: calc(100dvh - 60px);
-      overflow: hidden;
-    }
-  </style>
+  <style lang="scss"></style>
 
 
 </html>
