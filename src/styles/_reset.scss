@@ -1,4 +1,5 @@
-@use './variable' as *;
+@charset "utf-8";
+@use './variables' as *;
 /* ==========================================================================
   Document
   ========================================================================== */
@@ -20,10 +21,10 @@ html {
 }
 
 body {
-  background-color: $backgroundColor_base;
-  color: $fontColor_base;
-  font-family: $fontFamily_sansSerif;
-  line-height: $lineHeight_default;
+  background-color: var(--backgroundColor_base);
+  color: var(--fontColor_base);
+  font-family: var(--fontFamily_sansSerif);
+  line-height: var(--lineHeight_default);
   min-height: 100%;
   overflow-wrap: break-word;
   padding: 0;
@@ -81,7 +82,7 @@ small {
 code,
 kbd,
 samp {
-  font-family: $fontFamily_monospace;
+  font-family: var(--fontFamily_monospace);
   font-size: rem(16);
 }
 
@@ -140,7 +141,7 @@ hr {
 }
 
 pre {
-  font-family: $fontFamily_monospace;
+  font-family: var(--fontFamily_monospace);
   font-size: rem(16);
 }
 
