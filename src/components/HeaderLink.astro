@@ -1,6 +1,9 @@
 ---
+// hrefとclassの中で、propsへ残りをパッケージ化しています
 const { href, class: className, ...props } = Astro.props
+// urlからpathnameを取得
 const { pathname } = Astro.url
+// hrefがpathnameまたは末尾/を除いたpathnameに一致すればisActiveをtrueにしています
 const isActive = href === pathname || href === pathname.replace(/\/$/, '')
 ---
 
@@ -11,13 +14,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '')
 </li>
 
 <style lang="scss">
-  @use '../styles/variable' as *;
-  @use '../styles/mixin' as *;
   li {
     a {
       font-size: 16px;
       &.isActive {
-        color: $color_main;
+        color: var(--color_main);
         font-weight: bold;
       }
     }
